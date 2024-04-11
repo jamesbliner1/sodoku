@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="primer master brazo">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_4_2024_14_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_4_2024_14_38__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_4_2024_15_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_4_2024_15_04__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_11_4_2024_15_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_11_4_2024_15_01__Changes_.xml" afterDir="false" />
+    <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="genero numeros aleatorios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" afterDir="false" />
     </list>
@@ -188,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712865869708</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="genero numeros aleatorios">
+      <option name="closed" value="true" />
+      <created>1712867225291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712867225291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +213,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="primer master" />
     <MESSAGE value="primer master brazo" />
-    <option name="LAST_COMMIT_MESSAGE" value="primer master brazo" />
+    <MESSAGE value="genero numeros aleatorios" />
+    <option name="LAST_COMMIT_MESSAGE" value="genero numeros aleatorios" />
   </component>
 </project>
