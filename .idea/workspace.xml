@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="genero numeros aleatorios">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" afterDir="false" />
-    </list>
+    <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="MATRIZ INICIALIZADA" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712869306619</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="MATRIZ INICIALIZADA">
+      <option name="closed" value="true" />
+      <created>1712870020121</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712870020121</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +235,7 @@
     <MESSAGE value="primer master" />
     <MESSAGE value="primer master brazo" />
     <MESSAGE value="genero numeros aleatorios" />
-    <option name="LAST_COMMIT_MESSAGE" value="genero numeros aleatorios" />
+    <MESSAGE value="MATRIZ INICIALIZADA" />
+    <option name="LAST_COMMIT_MESSAGE" value="MATRIZ INICIALIZADA" />
   </component>
 </project>
