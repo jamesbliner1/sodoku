@@ -22,7 +22,7 @@ public class GameController {
     private GridPane gridPaneTablero;
     private String namePlayer;
 
-    private int[][] matriz = new int[9][9];
+    private int[][] array = new int[9][9];
 
 
     public void setWord(String namePlayer) {
@@ -68,4 +68,15 @@ public class GameController {
         System.out.println("Número aleatorio entre 1 y"+rango+ ": " + numeroAleatorio);
         return numeroAleatorio;
     }
+
+    private int[][]  inicializeArrayZeros(int[][] array)
+    {
+            for (int i=0;i<9;i++){
+                for (int j=0;j<9;j++){
+                    array[i][j] = 0;
+                }
+            }
+        return array;
+    }
+    //
 }
