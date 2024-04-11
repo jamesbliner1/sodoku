@@ -19,9 +19,9 @@
       <RowConstraints maxHeight="326.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <HBox alignment="CENTER" prefHeight="69.0" prefWidth="635.0" style="-fx-background-color: #5583A6; -fx-border-color: BLACK;" GridPane.columnSpan="2">
+      <HBox alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="635.0" style="-fx-background-color: #5583A6; -fx-border-color: BLACK;" GridPane.columnSpan="2">
          <children>
-            <Label fx:id="idtitulo" alignment="CENTER" prefHeight="36.0" prefWidth="431.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-color: #73F0EC; -fx-background-radius: 20;" text="EMPIEZA TU PARTIDA " textFill="#080808">
+            <Label fx:id="idtitulo" alignment="CENTER" graphicTextGap="3.0" prefHeight="36.0" prefWidth="216.0" style="-fx-border-color: black; -fx-border-radius: 20; -fx-background-color: #73F0EC; -fx-background-radius: 20;" text="EMPIEZA TU PARTIDA " textFill="#080808">
                <font>
                   <Font name="Goudy Old Style" size="20.0" />
                </font>

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="MATRIZ INICIALIZADA" />
+    <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="MATRIZ INICIALIZADA 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sodoku/Game-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sodoku/Game-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,19 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Sodoku" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Sodoku" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -141,6 +132,7 @@
       <workItem from="1712555708420" duration="114000" />
       <workItem from="1712555842381" duration="5245000" />
       <workItem from="1712855365750" duration="6009000" />
+      <workItem from="1712870477562" duration="3352000" />
     </task>
     <task id="LOCAL-00001" summary="primer master">
       <option name="closed" value="true" />
@@ -214,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712870020121</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="MATRIZ INICIALIZADA 1">
+      <option name="closed" value="true" />
+      <created>1712870121152</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712870121152</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +236,7 @@
     <MESSAGE value="primer master brazo" />
     <MESSAGE value="genero numeros aleatorios" />
     <MESSAGE value="MATRIZ INICIALIZADA" />
-    <option name="LAST_COMMIT_MESSAGE" value="MATRIZ INICIALIZADA" />
+    <MESSAGE value="MATRIZ INICIALIZADA 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="MATRIZ INICIALIZADA 1" />
   </component>
 </project>
