@@ -8,6 +8,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
+import java.util.Random;
 public class GameController {
 
 
@@ -49,5 +50,12 @@ public class GameController {
     }
     // traigo de sopa de letras
 
-
+    private int generarNumeroAleatorio(){
+        // Generar un número aleatorio entre 1 y 9 (ambos inclusive)
+        Random aleatorio = new Random();
+        int numeroAleatorio= aleatorio.nextInt(9)+1;
+        // Imprimir el número generado
+        System.out.println("Número aleatorio entre 1 y 9: " + numeroAleatorio)
+        return numeroAleatorio;
+    }
 }
