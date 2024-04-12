@@ -21,7 +21,32 @@ public class GameController {
     @FXML
     private GridPane gridPaneTablero;
     private String namePlayer;
+    @FXML
+    private GridPane idTablero1;
 
+    @FXML
+    private GridPane idTablero2;
+
+    @FXML
+    private GridPane idTablero3;
+
+    @FXML
+    private GridPane idTablero4;
+
+    @FXML
+    private GridPane idTablero5;
+
+    @FXML
+    private GridPane idTablero6;
+
+    @FXML
+    private GridPane idTablero7;
+
+    @FXML
+    private GridPane idTablero8;
+
+    @FXML
+    private GridPane idTablero9;
     private int[][] array = new int[9][9];
 
 
@@ -46,11 +71,16 @@ public class GameController {
                 x=generarNumeroAleatorio(3)-1;
                 y=generarNumeroAleatorio(3)-1;
                 valueXY=this.array[x][y];
-                if(valueXY== 0 ) {
-                    verificarXY(x,y,cuadroX,cuadroY, valueXY);
+                while(valueXY != 0 ){
+                    x=generarNumeroAleatorio(3)-1;
+                    y=generarNumeroAleatorio(3)-1;
+                    valueXY=this.array[x][y];
+                }
+                if(valueXY == 0 ) {
+                    verificarXY(x, y, cuadroX, cuadroY, valueXY);
                 }
                 TextField textFieldLetter = new TextField();
-                gridPaneTablero.add(textFieldLetter, x, y);
+                idTablero1.add(textFieldLetter, x, y);
                 textFieldEnterText(textFieldLetter, x, y);
                 textFieldLetter.setText("" + generarNumeroAleatorio(9));
 
@@ -60,7 +90,7 @@ public class GameController {
     private void verificarXY(int x, int y, int cuadroX, int cuadroY, int valueXY) {
         int checkValue = verificaCuadro(x, y, cuadroX, cuadroY, valueXY);
         while(checkValue != 1) {
-            checkValue = verificaCuadro(x, y, cuadroX, cuadroY, valueXY);
+           checkValue  = verificaCuadro(x, y, cuadroX, cuadroY, valueXY);
       }
     }
 

@@ -1,0 +1,114 @@
+Index: src/main/java/com/example/sodoku/controller/GameController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.sodoku.controller;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.event.EventHandler;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextArea;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.layout.GridPane;\r\n\r\nimport java.util.Random;\r\npublic class GameController {\r\n\r\n\r\n    @FXML\r\n    private Label idtitulo;\r\n\r\n    @FXML\r\n    private TextArea MesaggeArea;\r\n\r\n    @FXML\r\n    private GridPane gridPaneTablero;\r\n    private String namePlayer;\r\n\r\n    private int[][] array = new int[9][9];\r\n\r\n\r\n    public void setWord(String namePlayer) {\r\n        this.namePlayer = namePlayer.toUpperCase();\r\n        idtitulo.setText(this.namePlayer + \" a Sodokjugar\");\r\n    }\r\n\r\n    // traigo de sopa de letras\r\n\r\n    @FXML\r\n    public void initialize() {\r\n        // inicializo la matriz en ceros\r\n       inicializeArrayZeros();\r\n        //cuadro 1\r\n\r\n        int numerosIniciales = 4;\r\n        int contadorNumerosIniciales = 0;\r\n        int x=0, y=0, cuadroX=0, cuadroY=0, valueXY=0;\r\n        for (int i = 0; i < 4; i++) {\r\n\r\n                x=generarNumeroAleatorio(2);\r\n                y=generarNumeroAleatorio(2);\r\n                valueXY=this.array[x][y];\r\n                if(valueXY== 0 ) {\r\n                    verificarXY(x,y,cuadroX,cuadroY);\r\n                }\r\n                TextField textFieldLetter = new TextField();\r\n                gridPaneTablero.add(textFieldLetter, x, y);\r\n                textFieldEnterText(textFieldLetter, x, y);\r\n                textFieldLetter.setText(\"\" + generarNumeroAleatorio(9));\r\n\r\n        }\r\n    }\r\n\r\n    private void verificarXY(int x, int y, int cuadroX, int cuadroY) {\r\n        int valueXY=this.array[x][y];\r\n        this.array[x][y]=generarNumeroAleatorio(9);\r\n        // verificaCuadro(int x, int y, int cuadroX, int cuadroY);\r\n\r\n    }\r\n\r\n    private void verificaCuadro(int x, int y, int cuadroX, int cuadroY){\r\n        int contador=0;\r\n        for(int i= x; i<(x + 3); i++ ){\r\n            for(int j=y; j<(y+3); j++) {\r\n                contador = contador + 1;\r\n            }\r\n        }\r\n    }\r\n    private void textFieldEnterText(TextField textFieldLetter, int i, int j) {\r\n        textFieldLetter.setOnAction(new EventHandler<ActionEvent>() {\r\n            @Override\r\n            public void handle(ActionEvent actionEvent) {\r\n                //System.out.println(\"Button pressed in the position, \" + i + \" \" + j);\r\n\r\n            }\r\n        });\r\n    }\r\n    // traigo de sopa de letras\r\n\r\n    private int generarNumeroAleatorio(int rango) {\r\n        // Generar un número aleatorio entre 1 y 9 (ambos inclusive)\r\n        Random aleatorio = new Random();\r\n        int numeroAleatorio = aleatorio.nextInt(rango) + 1;\r\n        // Imprimir el número generado\r\n        System.out.println(\"Número aleatorio entre 1 y\" + rango + \": \" + numeroAleatorio);\r\n        return numeroAleatorio;\r\n    }\r\n\r\n    private void inicializeArrayZeros() {\r\n        for (int i = 0; i < 9; i++) {\r\n            for (int j = 0; j < 9; j++) {\r\n                this.array[i][j] = 0;\r\n            }\r\n        }\r\n\r\n    }\r\n    //\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/sodoku/controller/GameController.java b/src/main/java/com/example/sodoku/controller/GameController.java
+--- a/src/main/java/com/example/sodoku/controller/GameController.java	(revision 95e2b0d792ac2101fd92eff37ca7036790c039b5)
++++ b/src/main/java/com/example/sodoku/controller/GameController.java	(date 1712893182900)
+@@ -60,7 +60,7 @@
+     private void verificarXY(int x, int y, int cuadroX, int cuadroY) {
+         int valueXY=this.array[x][y];
+         this.array[x][y]=generarNumeroAleatorio(9);
+-        // verificaCuadro(int x, int y, int cuadroX, int cuadroY);
++        verificaCuadro(x, y, cuadroX, cuadroY);
+ 
+     }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"65772970-2f01-4b4f-96ed-e6c7e6f9e9c8\" name=\"Changes\" comment=\"MATRIZ INICIALIZADA 1\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eCChCMbcIXpGyN585kopZLOJGK\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master-james3&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/__F/Sodoku&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\DARIO\\Desktop\\Nueva carpeta (2)\\HangedGame\" />\r\n      <recent name=\"C:\\Users\\DARIO\\Desktop\\Nueva carpeta (2)\\HangedGame\\src\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\DARIO\\Desktop\\Nueva carpeta (2)\\HangedGame\\src\\main\\resources\\com\\example\\hangedgame\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.sodoku.Main\" />\r\n      <module name=\"Sodoku\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.sodoku.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"65772970-2f01-4b4f-96ed-e6c7e6f9e9c8\" name=\"Changes\" comment=\"\" />\r\n      <created>1711399291604</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711399291604</updated>\r\n      <workItem from=\"1711399292642\" duration=\"154000\" />\r\n      <workItem from=\"1711400580748\" duration=\"12494000\" />\r\n      <workItem from=\"1711416203595\" duration=\"1147000\" />\r\n      <workItem from=\"1711724580341\" duration=\"8557000\" />\r\n      <workItem from=\"1711736244494\" duration=\"8593000\" />\r\n      <workItem from=\"1711748467424\" duration=\"2286000\" />\r\n      <workItem from=\"1711750798493\" duration=\"16000\" />\r\n      <workItem from=\"1711750889031\" duration=\"328000\" />\r\n      <workItem from=\"1711751232289\" duration=\"85000\" />\r\n      <workItem from=\"1711751336869\" duration=\"237000\" />\r\n      <workItem from=\"1711751587242\" duration=\"186000\" />\r\n      <workItem from=\"1712033227926\" duration=\"20000\" />\r\n      <workItem from=\"1712033304071\" duration=\"19000\" />\r\n      <workItem from=\"1712555394628\" duration=\"222000\" />\r\n      <workItem from=\"1712555708420\" duration=\"114000\" />\r\n      <workItem from=\"1712555842381\" duration=\"5245000\" />\r\n      <workItem from=\"1712855365750\" duration=\"6009000\" />\r\n      <workItem from=\"1712870477562\" duration=\"3534000\" />\r\n      <workItem from=\"1712888775246\" duration=\"3002000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"primer master\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712861423960</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712861423960</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"primer master\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712861743807</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712861743807</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"primer master\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712861797954</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712861797955</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"primer master\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712862103837</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712862103837</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"primer master brazo\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712865869708</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712865869708</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"genero numeros aleatorios\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712867225291</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712867225291</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"genero numeros aleatorios\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712868941348</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712868941348</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"genero numeros aleatorios\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712869306619</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712869306619</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"MATRIZ INICIALIZADA\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712870020121</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712870020121</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"MATRIZ INICIALIZADA 1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712870121152</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712870121152</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"MATRIZ INICIALIZADA 1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712873859685</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712873859685</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"12\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"primer master\" />\r\n    <MESSAGE value=\"primer master brazo\" />\r\n    <MESSAGE value=\"genero numeros aleatorios\" />\r\n    <MESSAGE value=\"MATRIZ INICIALIZADA\" />\r\n    <MESSAGE value=\"MATRIZ INICIALIZADA 1\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"MATRIZ INICIALIZADA 1\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 95e2b0d792ac2101fd92eff37ca7036790c039b5)
++++ b/.idea/workspace.xml	(date 1712893183093)
+@@ -5,7 +5,6 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="65772970-2f01-4b4f-96ed-e6c7e6f9e9c8" name="Changes" comment="MATRIZ INICIALIZADA 1">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sodoku/controller/GameController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -29,7 +28,7 @@
+     </option>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="master" />
++        <entry key="$PROJECT_DIR$" value="master-james3" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -50,24 +49,24 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master-james3&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/__F/Sodoku&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.Main.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "git-widget-placeholder": "master-james4",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "D:/__F/Sodoku",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\DARIO\Desktop\Nueva carpeta (2)\HangedGame" />
+@@ -132,7 +131,7 @@
+       <workItem from="1712555842381" duration="5245000" />
+       <workItem from="1712855365750" duration="6009000" />
+       <workItem from="1712870477562" duration="3534000" />
+-      <workItem from="1712888775246" duration="3002000" />
++      <workItem from="1712888775246" duration="3496000" />
+     </task>
+     <task id="LOCAL-00001" summary="primer master">
+       <option name="closed" value="true" />
+@@ -222,7 +221,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1712873859685</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="MATRIZ INICIALIZADA 1">
++      <option name="closed" value="true" />
++      <created>1712892963695</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1712892963695</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
