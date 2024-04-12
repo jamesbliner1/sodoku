@@ -43,8 +43,8 @@ public class GameController {
         int x=0, y=0, cuadroX=0, cuadroY=0, valueXY=0;
         for (int i = 0; i < 4; i++) {
 
-                x=generarNumeroAleatorio(2);
-                y=generarNumeroAleatorio(2);
+                x=generarNumeroAleatorio(3)-1;
+                y=generarNumeroAleatorio(3)-1;
                 valueXY=this.array[x][y];
                 if(valueXY== 0 ) {
                     verificarXY(x,y,cuadroX,cuadroY, valueXY);
@@ -58,19 +58,24 @@ public class GameController {
     }
 
     private void verificarXY(int x, int y, int cuadroX, int cuadroY, int valueXY) {
-
-        this.array[x][y]=generarNumeroAleatorio(9);
-        verificaCuadro(x, y, cuadroX, cuadroY);
-
+        int checkValue = verificaCuadro(x, y, cuadroX, cuadroY, valueXY);
+        while(checkValue != 1) {
+            checkValue = verificaCuadro(x, y, cuadroX, cuadroY, valueXY);
+      }
     }
 
-    private void verificaCuadro(int x, int y, int cuadroX, int cuadroY){
+    private int verificaCuadro(int x, int y, int cuadroX, int cuadroY, int valueXY ){
+        this.array[x][y]=generarNumeroAleatorio(9);
+        valueXY=this.array[x][y];
         int contador=0;
         for(int i= x; i<(x + 3); i++ ){
             for(int j=y; j<(y+3); j++) {
-                contador = contador + 1;
+
+                if(this.array[i][j] == valueXY )
+                { contador=contador+1; }
             }
         }
+        return contador;
     }
     private void textFieldEnterText(TextField textFieldLetter, int i, int j) {
         textFieldLetter.setOnAction(new EventHandler<ActionEvent>() {
