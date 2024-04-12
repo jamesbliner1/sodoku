@@ -47,7 +47,7 @@ public class GameController {
                 y=generarNumeroAleatorio(2);
                 valueXY=this.array[x][y];
                 if(valueXY== 0 ) {
-                    verificarXY(x,y,cuadroX,cuadroY);
+                    verificarXY(x,y,cuadroX,cuadroY, valueXY);
                 }
                 TextField textFieldLetter = new TextField();
                 gridPaneTablero.add(textFieldLetter, x, y);
@@ -57,10 +57,10 @@ public class GameController {
         }
     }
 
-    private void verificarXY(int x, int y, int cuadroX, int cuadroY) {
-        int valueXY=this.array[x][y];
+    private void verificarXY(int x, int y, int cuadroX, int cuadroY, int valueXY) {
+
         this.array[x][y]=generarNumeroAleatorio(9);
-        // verificaCuadro(int x, int y, int cuadroX, int cuadroY);
+        verificaCuadro(x, y, cuadroX, cuadroY);
 
     }
 
