@@ -60,15 +60,16 @@ public class GameController {
     private void verificarXY(int x, int y, int cuadroX, int cuadroY) {
         int valueXY=this.array[x][y];
         this.array[x][y]=generarNumeroAleatorio(9);
-        verificaCuadro(int x, int y, int cuadroX, int cuadroY);
+        // verificaCuadro(int x, int y, int cuadroX, int cuadroY);
 
     }
 
     private void verificaCuadro(int x, int y, int cuadroX, int cuadroY){
         int contador=0;
         for(int i= x; i<(x + 3); i++ ){
-            for(int j=y; j<(y+3); j++){
-               contador= contador+1;
+            for(int j=y; j<(y+3); j++) {
+                contador = contador + 1;
+            }
         }
     }
     private void textFieldEnterText(TextField textFieldLetter, int i, int j) {
